@@ -10,18 +10,14 @@
       </ion-nav-buttons>
     </ion-nav-bar>
 
-    <div class="bar bar-header bar-assertive">
-      <h1 class="title">Header</h1>
-    </div>
-
 
 
     <ion-tabs class="tabs-striped tabs-bottom tabs-background-assertive tabs-color-light">
 
-      
+
       <!-- favourites Tab -->
-      <ion-tab title="Favourites" icon-off="ion-ios-person" icon-on="ion-ios-person-outline" nav-transition="ios" href="#/tab/favourites">
-        <ion-nav-view name="tab-favourites"></ion-nav-view>
+      <ion-tab title="Preferiti" icon-off="ion-android-star-outline" icon-on="ion-android-star" nav-transition="ios" href="#/tab/playlist">
+        <ion-nav-view name="tab-playlist"></ion-nav-view>
       </ion-tab>
 
 
@@ -32,7 +28,7 @@
 
 
       <!-- Alerts Tab -->
-      <ion-tab title="Settings" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" nav-transition="ios" href="#/tab/settings">
+      <ion-tab title="Cerca" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" nav-transition="ios" href="#/tab/settings">
         <ion-nav-view name="tab-settings"></ion-nav-view>
       </ion-tab>
 
@@ -50,29 +46,20 @@
     <ion-content>
 
       <ion-list>
-    
+
 
         <ion-item menu-close href="#/tab/home">
           Home
         </ion-item>
-        <ion-item menu-close href="#/tab/settings">
-          settings
-        </ion-item>
-        <ion-item menu-close href="#/tab/favourites">
-          favourites
-        </ion-item>
-        <ion-item menu-close href="#/tab/home">
-          Home
+        <ion-item menu-close href="#/tab/playlist">
+          Playlist
         </ion-item>
         <ion-item menu-close href="#/tab/settings">
-          settings
-        </ion-item>
-        <ion-item menu-close href="#/tab/favourites">
-          favourites
+          impostazioni
         </ion-item>
 
       </ion-list>
-    
+
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

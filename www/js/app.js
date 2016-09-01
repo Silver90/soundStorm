@@ -4,9 +4,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('tabs-starter', [
-  
+
   'ionic',
-  'tabs-starter.controllers'
+  'homeCtrl.controllers',
+  'playlistCtrl.controllers',
+  'settingsCtrl.controllers',
+  'angularSoundManager'
 
   ])
 
@@ -40,7 +43,7 @@ angular.module('tabs-starter', [
   .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/menu.html'
 
   })
 
@@ -49,18 +52,8 @@ angular.module('tabs-starter', [
     url: '/home',
     views: {
       'tab-home': {
-        templateUrl: 'templates/tab-home.html',
-        controller: 'HomeCtrl'
-      }
-    }
-  })
-
-  .state('tab.favourites', {
-    url: '/favourites',
-    views: {
-      'tab-favourites': {
-        templateUrl: 'templates/tab-favourites.html',
-        controller: 'FavouritesCtrl'
+        templateUrl: 'templates/home.html',
+        controller: 'homeCtrl'
       }
     }
   })
@@ -69,13 +62,21 @@ angular.module('tabs-starter', [
     url: '/settings',
     views: {
       'tab-settings': {
-        templateUrl: 'templates/tab-settings.html',
-        controller: 'SettingsCtrl'
+        templateUrl: 'templates/settings.html',
+        controller: 'settingsCtrl'
       }
     }
   })
 
-
+  .state('tab.playlist', {
+    url: '/playlist',
+    views: {
+      'tab-playlist': {
+        templateUrl: 'templates/playlist.html',
+        controller: 'playlistCtrl'
+      }
+    }
+  });
 
 
   // if none of the above states are matched, use this as the fallback
