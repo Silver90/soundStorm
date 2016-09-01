@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
-  templateUrl: 'build/pages/page2/page2.html'
+  templateUrl: 'build/pages/impostazioni/impostazioni.html'
 })
-export class Page2 {
+export class impostazioni {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
@@ -29,7 +29,7 @@ export class Page2 {
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(Page2, {
+    this.navCtrl.push(impostazioni, {
       item: item
     });
   }
