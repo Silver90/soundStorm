@@ -1,10 +1,25 @@
 <ion-view title="Playlist">
 
-	<ion-content class="has-header">
+	<ion-content class="has-header backgr">
+    <div class="container text-center">
+    <div class="col row">
+      <div class="col-sm-12">
 
+        <h5 class="text-white">Songs</h5>
+        <ul>
+          <li ng-repeat="song in songs">
+            <a href="#/tab/home"><button music-player="play" add-song="song">{{ song.title }} </button></a>
+            <button music-player add-song="song">+</button>
+          </li>
+        </ul>
 
+        <button play-all="songs">Play all</button>
+        <button play-all="songs" data-play="false">Add all</button>
 
+      </div>
+    </div>
 
+</div>
 
 	</ion-content>
 

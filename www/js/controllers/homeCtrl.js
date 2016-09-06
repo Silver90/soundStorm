@@ -7,7 +7,7 @@ angular.module('homeCtrl.controllers', [])
 
   .controller('homeCtrl', function ($scope, $state) {
 
-    $scope.songs = [
+    var songs = [
       {
         id: 'one',
         title: 'Rain',
@@ -34,5 +34,10 @@ angular.module('homeCtrl.controllers', [])
         url: 'http://www.freshly-ground.com/data/audio/binaural/Things%20that%20open,%20close%20and%20roll.mp3'
       }
     ];
+
+
+    window.localStorage.setItem("songs_list", JSON.stringify(songs));
+
+    $scope.songs = JSON.parse(window.localStorage.getItem("songs_list"));
 
   });
