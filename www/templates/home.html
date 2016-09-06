@@ -1,43 +1,41 @@
 
 <ion-view title="Home">
 
-	<ion-content class="has-header">
+	<ion-content class="has-header backgr">
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+    <div class="container text-center">
+      <div class="col row">
+        <div class="col-sm-12">
 
           <h5>Songs</h5>
           <ul>
             <li ng-repeat="song in songs">
-              <button music-player data-type="playTrack" data-song="{{ $index }}" all-songs="songs"
-                      my-playlist="playlist">{{ song.title }}
-              </button>
-              <button music-player data-type="addToPlaylist" data-song="{{ $index }}" all-songs="songs"
-                      my-playlist="playlist">+
-              </button>
+              <button music-player="play" add-song="song">{{ song.title }}</button>
+              <button music-player add-song="song">+</button>
             </li>
           </ul>
 
-          <button play-all="songs" my-playlist="playlist">Play all</button>
+          <button play-all="songs">Play all</button>
+          <button play-all="songs" data-play="false">Add all</button>
 
         </div>
       </div>
 
       <hr />
 
-      <div class="row">
-        <div class="col-md-12">
+      <div class="col row">
+        <div class="col-sm-12">
           <!-- init soundManager2 player -->
           <sound-manager></sound-manager>
 
-          <p>
-            Currently Playing: {{ currentPlaying.title }} ({{ currentPostion }} / {{ currentDuration }})
+          <p class="text-white">
+            Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
           </p>
-
-          <div class="seekBase" seek-track>
-            <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+          <div class="col">
+          <div class="seekBase col-center" seek-track>
+          <div class="seekLoad progress-bar colour-animated col-center" ng-style="{width : ( progress + '%' ) }"></div>
+          </div>
           </div>
           <br />
           <button play-music>Play</button>
@@ -47,10 +45,12 @@
           <button stop-music>Stop</button>
           -
           <button repeat-music>Repeat ({{ repeat }})</button>
-          <br/>
-          <br/>
-          Volume: {{ volume }}
           -
+          <button play-pause-toggle data-play="Play!" data-pause="Pause!">Play Toggle</button>
+
+          <h5 class="text-white">Is Playing: {{ isPlaying }}</h5>
+          <br/>
+          <br/><h5 class="text-white">Volume: {{ volume }} -</h5>
           <button music-volume data-type="increase">+</button>
           -
           <button music-volume data-type="decrease">-</button>
@@ -65,16 +65,15 @@
           <button clear-playlist>Clear Playlist</button>
           <br/>
           <br/>
-          <h5>Playlist</h5>
-          <ul set-playlist>
+          <h5 class="text-white">Playlist</h5>
+          <ul>
             <li ng-repeat="song in playlist">
-              <a play-from-playlist data-song="{{song.id}}">{{ song.title }}</a>
+              <a play-from-playlist="song" class="text-white">{{ song.title }}</a>
               -
-              <a remove-from-playlist data-song="{{song.id}}" data-index="{{$index}}" my-playlist="playlist">
-                <small>(remove)</small>
+              <a remove-from-playlist="song" data-index="{{$index}}">
+                <small class="text-white">(remove)</small>
               </a>
-              -
-              <span ng-if="currentPlaying.id == song.id">(current)</span>
+              <span ng-if="currentPlaying.id == song.id" class="text-white"> - (current)</span>
             </li>
           </ul>
         </div>
@@ -82,6 +81,9 @@
     </div>
 
 
-	</ion-content>
+  </ion-content>
 
 </ion-view>
+
+
+

@@ -1,7 +1,7 @@
 {
-  "name": "myblank",
+  "name": "soundStorm",
   "version": "1.1.1",
-  "description": "myblank: An Ionic project",
+  "description": "soundStorm: music player",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
