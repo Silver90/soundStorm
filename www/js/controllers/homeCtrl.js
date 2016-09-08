@@ -38,6 +38,4 @@ angular.module('homeCtrl.controllers', [])
 
     window.localStorage.setItem("songs_list", JSON.stringify(songs));
 
-    $scope.songs = JSON.parse(window.localStorage.getItem("songs_list"));
-
   });

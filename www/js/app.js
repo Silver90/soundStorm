@@ -7,8 +7,8 @@ angular.module('tabs-starter', [
 
   'ionic',
   'homeCtrl.controllers',
-  'playlistCtrl.controllers',
-  'settingsCtrl.controllers',
+  'musicCtrl.controllers',
+  'favouriteCtrl.controllers',
   'angularSoundManager'
 
   ])
@@ -58,22 +58,22 @@ angular.module('tabs-starter', [
     }
   })
 
-  .state('tab.settings', {
-    url: '/settings',
+  .state('tab.favourite', {
+    url: '/favourite',
     views: {
       'tab-settings': {
-        templateUrl: 'templates/settings.html',
-        controller: 'settingsCtrl'
+        templateUrl: 'templates/favourite.html',
+        controller: 'favouriteCtrl'
       }
     }
   })
 
-  .state('tab.playlist', {
-    url: '/playlist',
+  .state('tab.music', {
+    url: '/music',
     views: {
-      'tab-playlist': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'playlistCtrl'
+      'tab-music': {
+        templateUrl: 'templates/music.html',
+        controller: 'musicCtrl'
       }
     }
   });

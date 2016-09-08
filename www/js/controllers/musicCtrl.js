@@ -3,9 +3,9 @@
  */
 
 
-angular.module('playlistCtrl.controllers', [])
+angular.module('musicCtrl.controllers', [])
 
-  .controller('playlistCtrl', function ($scope, $state) {
+  .controller('musicCtrl', function ($scope, $state) {
 
 
     $scope.songs = JSON.parse(window.localStorage.getItem("songs_list"));

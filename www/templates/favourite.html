@@ -1,0 +1,29 @@
+<ion-view title="Preferiti">
+
+	<ion-content class="has-header backgr">
+    <div class="container text-center">
+      <div class="col row">
+        <div class="col-sm-12">
+    <button clear-playlist>Clear Playlist</button>
+    <br/>
+    <br/>
+    <h5 class="text-white">Playlist</h5>
+    <ul>
+      <li ng-repeat="song in playlist">
+        <a play-from-playlist="song" class="text-white">{{ song.title }}</a>
+        -
+        <a remove-from-playlist="song" data-index="{{$index}}">
+          <small class="text-white">(remove)</small>
+        </a>
+        <span ng-if="currentPlaying.id == song.id" class="text-white"> - (current)</span>
+      </li>
+    </ul>
+      </div>
+        </div>
+      </div>
+
+
+
+	</ion-content>
+
+</ion-view>
