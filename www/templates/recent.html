@@ -1,0 +1,25 @@
+<ion-view title="Recenti">
+
+	<ion-content class="has-header backgr">
+    <div class="container text-center">
+      <sound-manager></sound-manager>
+      <div class="col row">
+        <div class="col-sm-12">
+    <button ng-click="removeAllRecent()">Pulisci recenti</button>
+    <br/>
+    <br/>
+    <h5 class="text-white">Recenti</h5>
+    <ul>
+      <li ng-repeat="song in recent">
+        <a play-from-playlist="song" class="text-white">{{ song.title }}</a>
+      </li>
+    </ul>
+      </div>
+        </div>
+      </div>
+
+
+
+	</ion-content>
+
+</ion-view>

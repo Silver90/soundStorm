@@ -8,7 +8,7 @@ angular.module('tabs-starter', [
   'ionic',
   'homeCtrl.controllers',
   'musicCtrl.controllers',
-  'favouriteCtrl.controllers',
+  'recentCtrl.controllers',
   'angularSoundManager'
 
   ])
@@ -58,12 +58,13 @@ angular.module('tabs-starter', [
     }
   })
 
-  .state('tab.favourite', {
-    url: '/favourite',
+  .state('tab.recent', {
+    url: '/recent',
+    cache: false,
     views: {
-      'tab-settings': {
-        templateUrl: 'templates/favourite.html',
-        controller: 'favouriteCtrl'
+      'tab-recent': {
+        templateUrl: 'templates/recent.html',
+        controller: 'recentCtrl'
       }
     }
   })

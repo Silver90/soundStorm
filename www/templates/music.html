@@ -8,7 +8,7 @@
         <h5 class="text-white">Songs</h5>
         <ul>
           <li ng-repeat="song in songs">
-            <a href="#/tab/home"><button music-player="play" add-song="song">{{ song.title }} </button></a>
+            <a href="#/tab/home"><button  add-song="song" play-all="songs" ng-click="storeRecent(song)">{{ song.title }} </button></a>
             <button music-player add-song="song">+</button>
           </li>
         </ul>
